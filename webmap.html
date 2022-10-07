@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css"
+     integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+     crossorigin=""/>
+     <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"
+      integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s="
+      crossorigin=""></script>
+
+     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        h1{color: green;
+        font-family: Verdana;
+        }
+        p.tagline {
+	font-weight: 300;
+	font-size: 1.5em;
+	margin-top: -.75em;
+	padding: 0;
+	color: #333;
+	text-align: center;
+	margin-bottom: 30px;
+}
+        #map { height: 600px; width: auto;
+ }
+    .futa {
+    position: right;
+    z-index: 1;
+}
+	.foo {
+    background-color: #15151e;
+    color: #fff;
+}
+    .section_padding_100_70 {
+    padding-top: 100px;
+    padding-bottom: 70px;
+}
+    .foo {
+    color: rgb(4, 8, 52);
+}
+    .part {
+    margin-bottom: 30px;
+}
+    .foo .part > h5 {
+    color: #fff;
+}
+    .part h4, .part h5 {
+    margin-bottom: 30px;
+}
+    .section_padding_50 {
+    padding: 50px 0;
+}
+    .m-top-15 {
+    margin-top: 15px;
+}
+    .links a {
+    border-bottom: 1px solid #333;
+    color: rgba(255,255,255,.5);
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+}
+    .top-15 {
+    margin-top: 15px;
+}
+    .foo .part > h5 {
+    color: #fff;
+}
+    .part h4, .part h5 {
+    margin-bottom: 30px;
+}
+    .social_links > li {
+    display: inline-block;
+}
+    .social_links a {
+    border: 1px solid #333;
+    border-radius: 6px;
+    color: #888;
+    display: inline-block;
+    font-size: 13px;
+    margin-bottom: 3px;
+    padding: 7px 12px;
+}
+    .tagline {
+        font-family: "Lucida Console", "Courier New", monospace;
+    }
+    .a {
+    border-bottom: 1px solid #333;
+    color: rgba(255,255,255,.5);
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+}
+    h1:hover {
+    color: aqua;
+    text-transform: lowercase;
+}
+    .part {
+        text-align: center;
+        text-decoration-color: white;
+    }
+    </style>
+    <title>WELCOME TO MY WEBMAP</title>
+    <link rel="stylesheet" href="A:/CoMpreSsed/leaflet.css" />
+    <script src="A:/CoMpreSsed/leaflet.js"></script>
+    <header>
+    <h1 style="text-align: center;">WEBMAP</h1>
+    <p class="tagline">a simple webmap<br> for practice purposes</p>
+    </header>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        var map = L.map('map').setView([-0.7778,35.3357], 13);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+        }).addTo(map);
+        var marker = L.marker([-0.7778,35.3357]).addTo(map);
+        marker.bindPopup('<b>Welcome</b> to Bomet')
+
+        var popup = L.popup();
+
+        function onMapClick(e) {
+            popup
+                .setLatLng(e.latlng)
+                .setContent("You clicked the map at " + e.latlng.toString())
+                .openOn(map);
+        }
+
+        map.on('click', onMapClick);
+    </script>
+    <footer class="futa">
+        <div class="foo section_padding_100_70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="part">
+                            <h5>About Us</h5>
+                            <p style="color: white;">Contributors:</p><ul> <li><a href="https://www.w3schools.com"><i class="f   a farit-twrte" aria-hidden="true"></i> W3schools </a> <a href="https://leafletjs.com/"><i class="f   a fa-twritte" aria-hidden="true"></i> Leaflet </a> <a href="https://www.openstreetmap.org/#map=15/-1.2532/36.8796"><i class="f   a fa-wittte" aria-hidden="true"></i> OpenStreetMap </a> </li></ul>
+                            <p style="color: white;">Authors: <br> ENC222-0146/2019 <br> ELKANA KIPRUTO</p>
+                            <p style="color: white;">This is completely creative, clean & 100% responsive website.</p>
+                        </div>
+                        <div class="part m-top-15">
+                            <h5>Social Links</h5>
+                            <ul class="social_links">
+                                <li><a href="www.facebook.com"><i class="f   a fa-facebook" aria-hidden="true"></i> Facebook</a></li>
+                                <li><a href="#"><i class="f   a fa-twitter" aria-hidden="true"></i> Twitter</a></li>
+                                <li><a href="#"><i class="f   a fa-youtube" aria-hidden="true"></i> YouTube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                   </div>
+                                </div>
+                            </div>
+                        </div>
+     </footer>
+
+</body>
+</html>
